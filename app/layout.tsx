@@ -9,6 +9,10 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Logistack Ltd - Transforming Data Into Impact',
   description: 'Helping businesses make smarter decisions, build scalable digital solutions, and grow with technology.',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
 }
 
 export default function RootLayout({
