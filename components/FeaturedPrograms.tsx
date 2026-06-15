@@ -13,7 +13,7 @@ const programs = [
     title: 'Agricoders',
     tagline: 'Where Agriculture Meets Code',
     description:
-      'Agricoders is our flagship program empowering farmers, agripreneurs, and rural communities with technology-driven solutions — from precision agriculture tools to agri-data platforms that improve crop yields, resource management, and market access.',
+      'Agricoders is our flagship program empowering farmers, agripreneurs, and rural communities with technology-driven solutions including precision agriculture tools and agri-data platforms that improve crop yields, resource management, and market access.',
     highlights: [
       'Precision Agriculture & GIS',
       'Agri-data Platforms',
@@ -45,7 +45,7 @@ const programs = [
       'Investor-Ready Documents',
     ],
     cta: 'Try Logistack Plan',
-    href: 'https://www.agricoders.com/apps',
+    href: 'https://www.agricoders.com/app',
     accent: 'from-violet-500/20 via-blue-500/10 to-transparent',
     border: 'border-violet-500/20 hover:border-violet-400/50',
     glow: 'shadow-violet-500/10',
@@ -97,7 +97,7 @@ export default function FeaturedPrograms() {
             </span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-400">
-            Explore the products and programs we've built to drive real impact — from agri-tech communities
+            Explore the products and programs we've built to drive real impact, from agri-tech communities
             to AI-powered planning tools.
           </p>
         </motion.div>
@@ -176,13 +176,13 @@ export default function FeaturedPrograms() {
           className="mt-12 text-center"
         >
           <a
-            href="https://www.agricoders.com/apps"
+            href="https://www.agricoders.com/app"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 text-slate-400 hover:text-white text-sm font-medium transition-colors duration-200"
           >
             <Globe className="w-4 h-4" />
-            Browse all our apps at agricoders.com/apps
+            Browse all our apps at agricoders.com/app
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </motion.div>
