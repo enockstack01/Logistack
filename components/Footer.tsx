@@ -67,7 +67,7 @@ export default function Footer() {
                 <Link href="/services" className="block text-blue-100 hover:text-white transition hover:translate-x-1 transform duration-200">Services</Link>
                 <Link href="/about" className="block text-blue-100 hover:text-white transition hover:translate-x-1 transform duration-200">About</Link>
                 <Link href="/contact" className="block text-blue-100 hover:text-white transition hover:translate-x-1 transform duration-200">Contact</Link>
-                <a href="https://www.agricoders.com/apps" target="_blank" rel="noopener noreferrer" className="block text-blue-100 hover:text-white transition hover:translate-x-1 transform duration-200">Our Apps</a>
+                <a href="https://www.agricoders.com/app" target="_blank" rel="noopener noreferrer" className="block text-blue-100 hover:text-white transition hover:translate-x-1 transform duration-200">Our Apps</a>
               </div>
             </div>
 
@@ -95,7 +95,7 @@ export default function Footer() {
                   <span className="text-blue-100 text-xs">Agriculture &amp; Code Program</span>
                 </a>
                 <a
-                  href="https://www.agricoders.com/apps"
+                  href="https://www.agricoders.com/app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col gap-0.5 group"
