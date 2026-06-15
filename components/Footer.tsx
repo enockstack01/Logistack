@@ -26,7 +26,7 @@ export default function Footer() {
     <>
       <footer className="bg-logistack-dark text-white py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-5 gap-8">
+          <div className="grid md:grid-cols-6 gap-8">
             <div className="md:col-span-2">
               <h3 className="text-2xl font-bold mb-4">LOGISTACK LTD</h3>
               <p className="text-blue-100 mb-4">
@@ -67,6 +67,7 @@ export default function Footer() {
                 <Link href="/services" className="block text-blue-100 hover:text-white transition hover:translate-x-1 transform duration-200">Services</Link>
                 <Link href="/about" className="block text-blue-100 hover:text-white transition hover:translate-x-1 transform duration-200">About</Link>
                 <Link href="/contact" className="block text-blue-100 hover:text-white transition hover:translate-x-1 transform duration-200">Contact</Link>
+                <a href="https://www.agricoders.com/apps" target="_blank" rel="noopener noreferrer" className="block text-blue-100 hover:text-white transition hover:translate-x-1 transform duration-200">Our Apps</a>
               </div>
             </div>
 
@@ -78,6 +79,30 @@ export default function Footer() {
                 <p className="hover:text-white transition cursor-pointer">IT Support</p>
                 <p className="hover:text-white transition cursor-pointer">Tech Training</p>
                 <p className="hover:text-white transition cursor-pointer">Business Planning</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Programs &amp; Apps</h4>
+              <div className="space-y-3 text-sm">
+                <a
+                  href="https://www.agricoders.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col gap-0.5 group"
+                >
+                  <span className="text-emerald-400 font-semibold group-hover:text-emerald-300 transition">Agricoders</span>
+                  <span className="text-blue-100 text-xs">Agriculture &amp; Code Program</span>
+                </a>
+                <a
+                  href="https://www.agricoders.com/apps"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col gap-0.5 group"
+                >
+                  <span className="text-violet-400 font-semibold group-hover:text-violet-300 transition">Logistack Plan</span>
+                  <span className="text-blue-100 text-xs">AI Business Planning App</span>
+                </a>
               </div>
             </div>
 

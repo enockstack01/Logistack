@@ -9,10 +9,19 @@ const Hero = dynamic(() => import('../components/Hero'), {
   ),
 });
 
+const FeaturedPrograms = dynamic(() => import('../components/FeaturedPrograms'), {
+  loading: () => (
+    <div className="bg-slate-950 py-24 flex items-center justify-center">
+      <div className="text-slate-400 text-sm">Loading programs...</div>
+    </div>
+  ),
+});
+
 export default function Home() {
   return (
     <main>
       <Hero />
+      <FeaturedPrograms />
     </main>
   );
 }
