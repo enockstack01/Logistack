@@ -1,18 +1,18 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
 import '../styles/globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
-  title: 'Logistack Ltd - Transforming Data Into Impact',
-  description: 'Helping businesses make smarter decisions, build scalable digital solutions, and grow with technology.',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
+  title: 'Logistack Ltd | Data, maps and software for decisions that work',
+  description:
+    'Logistack Ltd is a Kigali-based technology company working in data science, GIS, software development and technology capacity building.',
+  icons: { icon: '/logistack-symbol-navy.png' },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en-GB">
+      <body className="font-sans bg-white text-logistack-ink">
         <Navbar />
         {children}
         <Footer />

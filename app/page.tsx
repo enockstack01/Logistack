@@ -1,27 +1,9 @@
-import dynamic from 'next/dynamic';
-
-// Lazy load the Hero component for better performance
-const Hero = dynamic(() => import('../components/Hero'), {
-  loading: () => (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center">
-      <div className="text-white text-xl">Loading...</div>
-    </div>
-  ),
-});
-
-const FeaturedPrograms = dynamic(() => import('../components/FeaturedPrograms'), {
-  loading: () => (
-    <div className="bg-slate-950 py-24 flex items-center justify-center">
-      <div className="text-slate-400 text-sm">Loading programs...</div>
-    </div>
-  ),
-});
+import Hero from '../components/Hero';
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <FeaturedPrograms />
     </main>
   );
 }

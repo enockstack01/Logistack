@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Performance optimizations */
 * {
   box-sizing: border-box;
 }
@@ -12,7 +11,9 @@ html {
 }
 
 body {
-  font-feature-settings: "rlig" 1, "calt" 1;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111111;
+  background: #ffffff;
 }
 
 /* Custom scrollbar */
@@ -21,24 +22,21 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f4f5fb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #003399;
+  background: #0a108a;
   border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #001a4d;
 }
 
 /* Focus styles for accessibility */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid #003399;
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #0a108a;
   outline-offset: 2px;
 }
 
@@ -51,13 +49,4 @@ textarea:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
-
-/* Optimize font loading */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2') format('woff2');
 }

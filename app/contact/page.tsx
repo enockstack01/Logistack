@@ -41,11 +41,13 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <h1 className="text-5xl font-extrabold text-logistack-dark mb-6">Contact Us</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to transform your business with technology? Get in touch with our team.
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-logistack-amber mb-3">Contact</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-logistack-navy mb-4">Contact us</h1>
+          <div className="h-1 w-16 bg-logistack-amber mb-6" />
+          <p className="text-lg text-logistack-ink max-w-2xl">
+            Tell us about your project and our team will reply.
           </p>
         </motion.div>
 
@@ -56,38 +58,38 @@ export default function Contact() {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-3xl font-bold text-logistack-dark mb-6">Get In Touch</h2>
+              <h2 className="text-2xl font-bold text-logistack-navy mb-6">Get in touch</h2>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <MapPin className="w-6 h-6 text-logistack-blue" />
+                  <MapPin className="w-6 h-6 text-logistack-navy" />
                   <div>
-                    <p className="font-semibold">Office</p>
-                    <p className="text-gray-600">Deco Center - NYARUTARAMA</p>
+                    <p className="font-bold text-logistack-navy">Address</p>
+                    <p className="text-logistack-ink">Deco Center, Nyarutarama, Kigali, Rwanda</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Mail className="w-6 h-6 text-logistack-blue" />
+                  <Mail className="w-6 h-6 text-logistack-navy" />
                   <div>
-                    <p className="font-semibold">Email</p>
-                    <p className="text-gray-600">logistackltd@gmail.com</p>
+                    <p className="font-bold text-logistack-navy">Email</p>
+                    <p className="text-logistack-ink">logistackltd@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Phone className="w-6 h-6 text-logistack-blue" />
+                  <Phone className="w-6 h-6 text-logistack-navy" />
                   <div>
-                    <p className="font-semibold">Phone</p>
-                    <p className="text-gray-600">+250 796 847 804 / +250 783 826 653</p>
+                    <p className="font-bold text-logistack-navy">Telephone</p>
+                    <p className="text-logistack-ink">+250 796 847 804</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <MessageCircle className="w-6 h-6 text-logistack-blue" />
+                  <MessageCircle className="w-6 h-6 text-logistack-navy" />
                   <div>
-                    <p className="font-semibold">WhatsApp</p>
+                    <p className="font-bold text-logistack-navy">WhatsApp</p>
                     <a
                       href="https://wa.me/250796847804"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-logistack-blue hover:text-logistack-dark transition font-medium"
+                      className="text-logistack-navy hover:underline font-medium"
                     >
                       +250 796 847 804
                     </a>
@@ -100,70 +102,70 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="bg-white p-8 rounded-xl shadow-lg"
+            className="bg-logistack-cloud border border-logistack-lavender p-8 rounded-xl"
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-bold text-logistack-navy mb-2">
                   Name
                 </label>
                 <input
                   {...register('name')}
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-logistack-blue focus:border-transparent"
+                  className="w-full px-4 py-3 border border-logistack-lavender bg-white rounded-lg focus:outline-none focus:border-logistack-navy focus:ring-2 focus:ring-logistack-navy/20"
                 />
                 {errors.name && (
-                  <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                  <p className="mt-1 text-sm text-logistack-navy font-bold">{errors.name.message}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-bold text-logistack-navy mb-2">
                   Email
                 </label>
                 <input
                   {...register('email')}
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-logistack-blue focus:border-transparent"
+                  className="w-full px-4 py-3 border border-logistack-lavender bg-white rounded-lg focus:outline-none focus:border-logistack-navy focus:ring-2 focus:ring-logistack-navy/20"
                 />
                 {errors.email && (
-                  <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                  <p className="mt-1 text-sm text-logistack-navy font-bold">{errors.email.message}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="company" className="block text-sm font-bold text-logistack-navy mb-2">
                   Company
                 </label>
                 <input
                   {...register('company')}
                   type="text"
                   id="company"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-logistack-blue focus:border-transparent"
+                  className="w-full px-4 py-3 border border-logistack-lavender bg-white rounded-lg focus:outline-none focus:border-logistack-navy focus:ring-2 focus:ring-logistack-navy/20"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-bold text-logistack-navy mb-2">
                   Message
                 </label>
                 <textarea
                   {...register('message')}
                   id="message"
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-logistack-blue focus:border-transparent"
+                  className="w-full px-4 py-3 border border-logistack-lavender bg-white rounded-lg focus:outline-none focus:border-logistack-navy focus:ring-2 focus:ring-logistack-navy/20"
                 />
                 {errors.message && (
-                  <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
+                  <p className="mt-1 text-sm text-logistack-navy font-bold">{errors.message.message}</p>
                 )}
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-logistack-blue text-white py-3 px-6 rounded-lg font-bold hover:bg-logistack-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-logistack-navy text-white py-3 px-6 rounded-lg font-bold hover:bg-logistack-amber hover:text-logistack-navy transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Send via WhatsApp'}
               </button>

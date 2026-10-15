@@ -85,7 +85,7 @@ export default function GoogleTranslate() {
   };
 
   return (
-    <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
+    <div className="flex items-center gap-2 text-sm">
       <label htmlFor="language-selector" className="sr-only">
         Translate site
       </label>
@@ -93,7 +93,7 @@ export default function GoogleTranslate() {
         id="language-selector"
         value={language}
         onChange={(event) => changeLanguage(event.target.value)}
-        className="rounded-full border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm outline-none transition focus:border-logistack-blue focus:ring-2 focus:ring-logistack-blue/20"
+        className="rounded-full border border-logistack-lavender bg-white px-3 py-2 text-sm text-logistack-ink outline-none transition focus:border-logistack-navy"
       >
         {languages.map((lang) => (
           <option key={lang.code} value={lang.code}>
@@ -101,7 +101,6 @@ export default function GoogleTranslate() {
           </option>
         ))}
       </select>
-      <span className="text-xs text-slate-400">Translate</span>
     </div>
   );
 }

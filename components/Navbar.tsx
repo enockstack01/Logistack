@@ -8,17 +8,17 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 py-3 md:py-4 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="Logistack logo" className="h-10 w-10 object-contain" />
-          <span className="font-bold text-xl text-logistack-blue md:text-2xl">LOGISTACK LTD</span>
-        </div>
+    <nav className="fixed w-full z-50 bg-white border-b border-logistack-lavender">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+        <Link href="/" aria-label="Logistack Ltd home" onClick={() => setIsOpen(false)}>
+          <img src="/logistack-logo-navy.png" alt="Logistack Ltd" className="h-9 w-auto md:h-10" />
+        </Link>
 
         <div className="flex items-center gap-2 md:hidden">
           <button
@@ -26,7 +26,7 @@ export default function Navbar() {
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-label="Toggle navigation menu"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-gray-700 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-logistack-blue"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-logistack-lavender bg-white text-logistack-navy hover:bg-logistack-mist"
           >
             <span className="sr-only">Toggle menu</span>
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -39,14 +39,18 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className={`flex-1 md:flex md:items-center md:justify-end ${isOpen ? 'block' : 'hidden'}`}>
-          <div className="flex flex-col gap-3 rounded-2xl bg-white p-4 shadow-lg shadow-slate-200/80 md:bg-transparent md:p-0 md:shadow-none md:flex-row md:items-center md:gap-8 md:w-auto">
-            <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-8 text-gray-600 font-medium">
+        <div
+          className={`${
+            isOpen ? 'block' : 'hidden'
+          } absolute left-0 right-0 top-full border-b border-logistack-lavender bg-white p-4 md:static md:flex md:border-0 md:p-0 md:items-center`}
+        >
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-8 font-bold text-logistack-navy">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="hover:text-logistack-blue transition"
+                  className="py-1 hover:underline underline-offset-8 decoration-logistack-amber decoration-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -54,16 +58,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-4">
-              <GoogleTranslate />
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-logistack-blue px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-logistack-dark"
-                onClick={() => setIsOpen(false)}
-              >
-                Get Started
-              </Link>
-            </div>
+            <GoogleTranslate />
           </div>
         </div>
       </div>

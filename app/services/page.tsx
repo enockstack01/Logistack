@@ -2,71 +2,44 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Database, Code, ShieldCheck, Users, FileText, MapPin, ArrowRight, CheckCircle } from 'lucide-react';
+import { Database, Code, ShieldCheck, Users, FileText, MapPin, CheckCircle } from 'lucide-react';
 
 const services = [
   {
     icon: Database,
-    title: 'Data Analysis & Spatial Intelligence',
-    description: 'Leveraging ArcGIS and Google Earth Engine for advanced spatial data analysis and visualization.',
-    features: ['Geospatial Analysis', 'Remote Sensing', 'Data Visualization', 'Environmental Monitoring'],
-    technologies: ['ArcGIS', 'Google Earth Engine', 'QGIS', 'Python'],
+    title: 'Data analysis and spatial intelligence',
+    description: 'Advanced spatial data analysis and visualisation using ArcGIS and Google Earth Engine.',
+    features: ['Geospatial analysis', 'Remote sensing', 'Data visualisation', 'Environmental monitoring'],
   },
   {
     icon: Code,
-    title: 'Software Engineering',
-    description: 'Building scalable mobile and web applications with modern technologies and best practices.',
-    features: ['Mobile Apps', 'Web Applications', 'API Development', 'System Integration'],
-    technologies: ['React Native', 'Next.js', 'Node.js', 'Python'],
+    title: 'Software engineering',
+    description: 'Scalable mobile and web applications built with modern technologies.',
+    features: ['Mobile apps', 'Web applications', 'API development', 'System integration'],
   },
   {
     icon: ShieldCheck,
-    title: 'IT Support',
-    description: 'Subscription-based maintenance and support services to keep your systems running smoothly.',
-    features: ['24/7 Monitoring', 'System Maintenance', 'Security Updates', 'Technical Support'],
-    technologies: ['Cloud Services', 'Monitoring Tools', 'Security Systems'],
+    title: 'IT support',
+    description: 'Subscription-based maintenance and support services that keep your systems running.',
+    features: ['System monitoring', 'System maintenance', 'Security updates', 'Technical support'],
   },
   {
     icon: Users,
-    title: 'Tech Capacity Building',
-    description: 'Training and empowerment programs to build technical skills and digital literacy.',
-    features: ['Workshops', 'Certifications', 'Skill Development', 'Knowledge Transfer'],
-    technologies: ['Online Platforms', 'Learning Management', 'Assessment Tools'],
+    title: 'Tech capacity building',
+    description: 'Training programmes that build technical skills and digital literacy.',
+    features: ['Workshops', 'Certifications', 'Skill development', 'Knowledge transfer'],
   },
   {
     icon: FileText,
-    title: 'Business Plan Proposals',
-    description: 'Professional documentation and strategic planning for business growth and development.',
-    features: ['Market Analysis', 'Financial Planning', 'Strategy Development', 'Implementation Roadmap'],
-    technologies: ['Business Intelligence', 'Financial Modeling', 'Project Management'],
+    title: 'Business plan proposals',
+    description: 'Professional documentation and strategic planning for business growth.',
+    features: ['Market analysis', 'Financial planning', 'Strategy development', 'Implementation roadmap'],
   },
   {
     icon: MapPin,
-    title: 'Precision Agriculture',
-    description: 'Advanced GIS solutions for agricultural optimization, including precision irrigation and crop monitoring.',
-    features: ['Crop Monitoring', 'Irrigation Optimization', 'Yield Prediction', 'Resource Management'],
-    technologies: ['GIS', 'IoT Sensors', 'Drone Technology', 'AI/ML'],
-  },
-];
-
-const caseStudies = [
-  {
-    title: 'Rwanda AgroShield',
-    description: 'Disaster intelligence platform for agricultural risk management',
-    impact: 'Reduced crop losses by 40%',
-    technologies: ['GIS', 'Remote Sensing', 'AI'],
-  },
-  {
-    title: 'Smart City Initiative',
-    description: 'Urban planning and infrastructure optimization platform',
-    impact: 'Improved resource allocation by 35%',
-    technologies: ['Web Apps', 'Data Analytics', 'IoT'],
-  },
-  {
-    title: 'Healthcare Management System',
-    description: 'Digital health platform for patient management and analytics',
-    impact: 'Enhanced patient care efficiency by 50%',
-    technologies: ['Mobile Apps', 'Cloud Services', 'Data Security'],
+    title: 'Precision agriculture',
+    description: 'GIS solutions for agricultural optimisation, including irrigation planning and crop monitoring.',
+    features: ['Crop monitoring', 'Irrigation optimisation', 'Yield prediction', 'Resource management'],
   },
 ];
 
@@ -74,79 +47,57 @@ export default function Services() {
   return (
     <main className="pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
-        {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
+          className="mb-16 max-w-4xl"
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold text-logistack-dark mb-6">
-            Our <span className="text-logistack-blue">Solutions</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Comprehensive technology solutions designed to transform your business operations,
-            drive innovation, and accelerate growth in the digital age.
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-logistack-amber mb-3">Services</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-logistack-navy mb-4">Our services</h1>
+          <div className="h-1 w-16 bg-logistack-amber mb-6" />
+          <p className="text-lg text-logistack-ink">
+            We combine GIS, data science and software development to give clients the evidence they need to
+            decide and the tools to act on it.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-logistack-blue/10 text-logistack-blue px-4 py-2 rounded-full">GIS & Spatial Intelligence</span>
-            <span className="bg-logistack-blue/10 text-logistack-blue px-4 py-2 rounded-full">Software Development</span>
-            <span className="bg-logistack-blue/10 text-logistack-blue px-4 py-2 rounded-full">Digital Transformation</span>
-          </div>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-100 group"
+              transition={{ delay: index * 0.05 }}
+              className="rounded-xl bg-logistack-mist p-8"
             >
-              <div className="flex items-center justify-between mb-6">
-                <service.icon className="w-12 h-12 text-logistack-blue group-hover:scale-110 transition-transform" />
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-logistack-blue group-hover:translate-x-1 transition-all" />
-              </div>
-              <h3 className="text-xl font-bold text-logistack-dark mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-
-              <div className="space-y-3">
-                <div>
-                  <h4 className="font-semibold text-sm text-logistack-dark mb-2">Key Features:</h4>
-                  <ul className="space-y-1">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="text-sm text-gray-600 flex items-center gap-2">
-                        <CheckCircle className="w-3 h-3 text-green-500" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <service.icon className="w-10 h-10 text-logistack-navy mb-5" />
+              <h2 className="text-xl font-bold text-logistack-navy mb-3">{service.title}</h2>
+              <p className="text-logistack-ink mb-5">{service.description}</p>
+              <ul className="space-y-1">
+                {service.features.map((feature) => (
+                  <li key={feature} className="text-sm text-logistack-ink flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-logistack-navy flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
 
-
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center bg-gradient-to-r from-logistack-blue to-logistack-dark rounded-2xl p-12 text-white"
-        >
-          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Let's discuss how our technology solutions can drive your success.
-            Contact us today for a free consultation.
+        <div className="rounded-2xl bg-logistack-navy p-10 text-white">
+          <h2 className="text-3xl font-bold mb-3">Ready to start?</h2>
+          <div className="h-1 w-16 bg-logistack-amber mb-6" />
+          <p className="text-logistack-periwinkle mb-8 max-w-2xl">
+            Contact us to discuss your project and how our services can support it.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="inline-block bg-white text-logistack-blue px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">
-              Get Started
-            </Link>
-          </div>
-        </motion.div>
+          <Link
+            href="/contact"
+            className="inline-block rounded-lg bg-logistack-amber px-8 py-3 font-bold text-logistack-navy hover:bg-white transition-colors"
+          >
+            Contact us
+          </Link>
+        </div>
       </div>
     </main>
   );
