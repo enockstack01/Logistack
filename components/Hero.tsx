@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ChevronRight, BarChart3, Smartphone, Headphones, BookOpen, PieChart } from 'lucide-react';
-import DataStack from './DataStack';
+import LogoBuild from './LogoBuild';
 import Reveal from './Reveal';
+import SectionHeading from './SectionHeading';
+import LayerStory from './LayerStory';
 
 const services = [
   {
@@ -105,17 +107,14 @@ export default function Hero() {
           </div>
 
           <div className="mx-auto w-full max-w-md lg:max-w-none">
-            <DataStack />
+            <LogoBuild />
           </div>
         </div>
       </section>
 
       <section className="bg-white px-6 py-20" aria-label="What we do">
         <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <h2 className="mb-3 text-3xl font-bold text-logistack-navy">What we do</h2>
-            <div className="mb-10 h-1 w-16 bg-logistack-amber" />
-          </Reveal>
+          <SectionHeading>What we do</SectionHeading>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
               <Reveal key={service.title} delay={i * 0.08}>
@@ -137,12 +136,11 @@ export default function Hero() {
         </div>
       </section>
 
-      <section className="bg-logistack-cloud px-6 py-20" aria-label="How we work">
+      <LayerStory />
+
+      <section className="bg-white px-6 py-20" aria-label="How we work">
         <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <h2 className="mb-3 text-3xl font-bold text-logistack-navy">How we work</h2>
-            <div className="mb-10 h-1 w-16 bg-logistack-amber" />
-          </Reveal>
+          <SectionHeading>How we work</SectionHeading>
           <div className="grid gap-6 md:grid-cols-3">
             {[
               ['1', 'Understand', 'We start on the ground with your farm, district or business and the decision you need to make.'],
