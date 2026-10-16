@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import '../styles/globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Providers from '../components/Providers'
 
 export const metadata: Metadata = {
   title: 'Logistack Ltd | Data, maps and software for decisions that work',
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <body className="font-sans bg-white text-logistack-ink">
-        <Navbar />
-        {children}
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   )

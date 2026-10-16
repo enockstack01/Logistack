@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Reveal from '../../components/Reveal';
 import Link from 'next/link';
 import { Database, Code, ShieldCheck, Users, FileText, MapPin, CheckCircle } from 'lucide-react';
 
@@ -63,28 +64,25 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 }}
-              className="rounded-xl bg-logistack-mist p-8"
-            >
-              <service.icon className="w-10 h-10 text-logistack-navy mb-5" />
-              <h2 className="text-xl font-bold text-logistack-navy mb-3">{service.title}</h2>
-              <p className="text-logistack-ink mb-5">{service.description}</p>
-              <ul className="space-y-1">
-                {service.features.map((feature) => (
-                  <li key={feature} className="text-sm text-logistack-ink flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-logistack-navy flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            <Reveal key={service.title} delay={(index % 3) * 0.08}>
+              <div className="group h-full rounded-xl bg-logistack-mist p-8 transition-all duration-300 hover:-translate-y-1 hover:bg-logistack-navy">
+                <service.icon className="w-10 h-10 text-logistack-navy mb-5 transition-colors duration-300 group-hover:text-logistack-amber" />
+                <h2 className="text-xl font-bold text-logistack-navy mb-3 transition-colors duration-300 group-hover:text-white">{service.title}</h2>
+                <p className="text-logistack-ink mb-5 transition-colors duration-300 group-hover:text-logistack-periwinkle">{service.description}</p>
+                <ul className="space-y-1">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="text-sm text-logistack-ink flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
+                      <CheckCircle className="w-4 h-4 text-logistack-navy flex-shrink-0 transition-colors duration-300 group-hover:text-logistack-amber" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
           ))}
         </div>
 
+        <Reveal>
         <div className="rounded-2xl bg-logistack-navy p-10 text-white">
           <h2 className="text-3xl font-bold mb-3">Ready to start?</h2>
           <div className="h-1 w-16 bg-logistack-amber mb-6" />
@@ -98,6 +96,7 @@ export default function Services() {
             Contact us
           </Link>
         </div>
+        </Reveal>
       </div>
     </main>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Reveal from '../../components/Reveal';
 import Link from 'next/link';
 import { Target, Users, TrendingUp, Shield, MapPin } from 'lucide-react';
 
@@ -54,16 +55,18 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="rounded-xl bg-logistack-mist border-l-4 border-logistack-amber p-6 mb-16 max-w-4xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-logistack-amber mb-2">Positioning</p>
-          <p className="text-logistack-ink">
-            Logistack turns data, maps and software into decisions that work on the ground, for farmers,
-            institutions and businesses in Rwanda and across Africa.
-          </p>
-        </div>
+        <Reveal className="mb-16 max-w-4xl">
+          <div className="rounded-xl bg-logistack-mist border-l-4 border-logistack-amber p-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-logistack-amber mb-2">Positioning</p>
+            <p className="text-logistack-ink">
+              Logistack turns data, maps and software into decisions that work on the ground, for farmers,
+              institutions and businesses in Rwanda and across Africa.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div>
+          <Reveal>
             <h2 className="text-2xl font-bold text-logistack-navy mb-3">Our expertise</h2>
             <div className="h-1 w-12 bg-logistack-amber mb-6" />
             <ul className="space-y-3">
@@ -74,9 +77,10 @@ export default function About() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
-          <div className="rounded-xl bg-logistack-navy p-8 text-white">
+          <Reveal delay={0.12}>
+          <div className="h-full rounded-xl bg-logistack-navy p-8 text-white">
             <h2 className="text-2xl font-bold mb-3">What our logo means</h2>
             <div className="h-1 w-12 bg-logistack-amber mb-6" />
             <p className="text-logistack-periwinkle">
@@ -84,22 +88,28 @@ export default function About() {
               map layers, and the circuits stand for the software and intelligence connecting them.
             </p>
           </div>
+          </Reveal>
         </div>
 
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-logistack-navy mb-3">How we work</h2>
-          <div className="h-1 w-16 bg-logistack-amber mb-8" />
+          <Reveal>
+            <h2 className="text-3xl font-bold text-logistack-navy mb-3">How we work</h2>
+            <div className="h-1 w-16 bg-logistack-amber mb-8" />
+          </Reveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {attributes.map((item) => (
-              <div key={item.title} className="rounded-xl bg-logistack-mist p-6">
-                <item.icon className="w-8 h-8 text-logistack-navy mb-4" />
-                <h3 className="text-lg font-bold text-logistack-navy mb-2">{item.title}</h3>
-                <p className="text-logistack-ink">{item.description}</p>
-              </div>
+            {attributes.map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.08}>
+                <div className="group h-full rounded-xl bg-logistack-mist p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-logistack-navy">
+                  <item.icon className="w-8 h-8 text-logistack-navy mb-4 transition-colors duration-300 group-hover:text-logistack-amber" />
+                  <h3 className="text-lg font-bold text-logistack-navy mb-2 transition-colors duration-300 group-hover:text-white">{item.title}</h3>
+                  <p className="text-logistack-ink transition-colors duration-300 group-hover:text-logistack-periwinkle">{item.description}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
 
+        <Reveal>
         <div className="rounded-2xl bg-logistack-navy p-10 text-white">
           <h2 className="text-3xl font-bold mb-3">Ready to work with us?</h2>
           <div className="h-1 w-16 bg-logistack-amber mb-6" />
@@ -121,6 +131,7 @@ export default function About() {
             </Link>
           </div>
         </div>
+        </Reveal>
       </div>
     </main>
   );
